@@ -6,7 +6,7 @@ function DashboardLayout({ children }) {
   const [show, setShow] = useState(false);
   return (
     <div className=" w-full bg-slate-200 min-h-screen transition-all">
-      <div className="flex w-full h-screen">
+      <div className="flex w-full min-h-screen">
         <div
           className={`fixed top-[10px] left-[120px] w-[20px] h-[20px] flex justify-between flex-col items-center z-20 transition-all duration-700 cursor-pointer ${
             !show ? "!left-5" : ""
@@ -50,8 +50,10 @@ function DashboardLayout({ children }) {
           </Link>
         </aside>
         <div
-          className={`min-w-[calc(100vw-4vw)] md:min-w-[calc(100vw-150px)]  translate-x-[10px] mt-[20px] md:ml-[150px] md:translate-x-0 pt-2.5 px-2.5 transition-all  ${
-            !show ? "md:!-translate-x-[130px] md:!min-w-[calc(100vw-20px)] bg-black" : ""
+          className={`min-w-[calc(100vw-4vw)] md:min-w-[calc(100vw-150px)]  translate-x-[0px] mt-[20px] pb-4 md:ml-[150px] md:translate-x-0 pt-2.5 px-2.5 transition-all  ${
+            !show
+              ? "md:!-translate-x-[130px] md:!min-w-[calc(100vw-20px)] "
+              : ""
           }`}
         >
           {children}
