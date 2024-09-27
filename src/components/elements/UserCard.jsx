@@ -1,18 +1,22 @@
 import React from "react";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
 
-function UserCard({ id, name, username, email }) {
+export default function UserCard({ name, email, id, username }) {
   return (
-    <div className="bg-white w-96 flex rounded shadow-lg h-fit p-3 ">
-      <span className="min-w-[60px] h-[60px] flex items-center mr-2 text-3xl justify-center bg-slate-200 m-auto text-xl shadow-lg  rounded-full">
-        {id}
-      </span>
-      <div className="w-full">
-        <p>Name : {name}</p>
-        <p>User name : {username}</p>
-        <p>Email : {email}</p>
-      </div>
-    </div>
+    <Card sx={{ width: "350px" }}>
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="h2">
+          {`${id} - ${username} `}
+        </Typography>
+        <Typography variant="body2" sx={{ color: "text.secondary" }}>
+          name: {name}
+        </Typography>
+        <Typography variant="body2" sx={{ color: "text.secondary" }}>
+          email: {email}
+        </Typography>
+      </CardContent>
+    </Card>
   );
 }
-
-export default UserCard;
